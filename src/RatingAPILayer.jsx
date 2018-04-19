@@ -64,7 +64,8 @@ class RatingAPILayer extends React.PureComponent {
       fractions,
       direction,
       start,
-      stop
+      stop,
+      wrapperClassName
     } = this.props;
 
     function calculateTotalSymbols(start, stop, step) {
@@ -85,6 +86,7 @@ class RatingAPILayer extends React.PureComponent {
         placeholderSymbol={placeholderSymbol}
         onClick={this.handleClick}
         onHover={this.handleHover}
+        wrapperClassName={wrapperClassName}
       />
     );
   }
@@ -147,7 +149,8 @@ RatingAPILayer.propTypes = typeof __DEV__ !== 'undefined' && __DEV__ && {
     PropTypes.element
   ]),
   onHover: PropTypes.func,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  wrapperClassName: PropTypes.string
 };
 
 export default RatingAPILayer;
