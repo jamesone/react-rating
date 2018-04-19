@@ -161,6 +161,7 @@ class Rating extends React.PureComponent {
     return (
       <span
         style={{ display: 'inline-block', direction }}
+        className={this.props.wrapperClassName}
         onMouseEnter={!readonly ? this.onMouseEnter : noop}
         onMouseLeave={!readonly ? this.onMouseLeave : noop}
       >
@@ -210,7 +211,8 @@ Rating.propTypes = typeof __DEV__ !== 'undefined' && __DEV__ && {
     PropTypes.element
   ]),
   onClick: PropTypes.func.isRequired,
-  onHover: PropTypes.func.isRequired
+  onHover: PropTypes.func.isRequired,
+  wrapperClassName: PropTypes.string
 };
 
 export default Rating;
